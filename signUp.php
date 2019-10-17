@@ -29,3 +29,30 @@ if(isset($_SESSION['error'])) {
 	   </fieldset>
 </form>
 
+<?php
+	if(empty($_POST["first_name"])) {
+?>
+	<p style="color: red;">First Name can't be empty</p>
+<?php
+	}
+	if(empty($_POST["last_name"])) {
+?>
+	<p style="color:red;">Last Name can't be empty</p>
+<?php
+	}
+	if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+?>
+	<p style="color:red;">Email not valid</p>
+<?php
+	}
+	if(empty($_POST["password"])) {
+?>
+	<p style="color:red;">Password can't be empty</p>
+<?php
+	}
+	if($_POST["password"]!=$_POST["password_confirm"]){
+?>
+	<p style="color:red;">Passwords don't match</p>
+<?php
+	}
+?>
