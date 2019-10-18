@@ -34,7 +34,7 @@ else {
 	$last_name=$GET['last_name'];
 	$first_name=$GET['first_name'];
 	#insertion
-	$pdo->query("insert into User (login,password,last_name,first_name,email) values ('$login','$password','$last_name','$first_name','$email');
+	$pdo->query("insert into User (login,password,last_name,first_name,email) values ('$login','$password','$last_name','$first_name','$email'));
 	header('Location : fridge.php');
 	exit();
 }
