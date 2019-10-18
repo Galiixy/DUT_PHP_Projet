@@ -24,7 +24,7 @@ $res = $pdo->query("Select * from User where email = '$email'");
 if $res <> null
 {
     $_SESSION['error']='user already exist !';
-    header('Location : /form.php');
+    header('Location : /index.php');
 }
 else {
 	#Data recovery
@@ -34,5 +34,6 @@ else {
 	$first_name=$GET['first_name'];
 	#insertion
 	$pdo->query("insert into User (login,password,last_name,first_name,email) values ('$login','$password','$last_name','$first_name','$email');
+	header('Location : /fridge.php');
 }
 ?>
