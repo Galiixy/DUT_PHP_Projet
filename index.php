@@ -19,7 +19,7 @@ if (isset($_SESSION['error'])) {
         <input type="submit" value="Let's Cook!" />
     </fieldset>
 </form>
-<a href="signUp.html">Create Account</a>
+<a href="signUp.php">Create Account</a>
 
 <?php
 	if(empty($_POST["login"])) {
