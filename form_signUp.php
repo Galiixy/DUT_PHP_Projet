@@ -21,7 +21,7 @@ try {
 #-----------------------------------------------------------
 $email = $GET['email'];
 $res = $pdo->query("Select * from User where email = '$email'");
-if $res <> null
+if ($res <> null)
 {
     $_SESSION['error']='user already exist !';
     header('Location : /index.php');
