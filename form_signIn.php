@@ -21,22 +21,25 @@ try {
 }
 #-----------------------------------------------------------
 
-$login = $GET['login'];
+$login = $_POST['login'];
 $res = $pdo->query("Select * from User where login = '$login'");
 if($row = $res->fetch())
 {
-    if ($row['password'] == $_GET['password']) {
+    if ($row['password'] == $_POST['password']) {
         $_SESSION['login']=$login;
-        header('Location : /index.php');
+	header('Location: /fridge.php');
+	exit();
     } else {
         $_SESSION['error']='invalid login or password';
-        header('Location: /form.php')
+	header('Location: /index.php');
+	exit();
     }
 }
 else
 {
     $_SESSION['error']='user does not exist';
-    header('Location : /form.php');
+    header('Location: /index.php');
+    exit();
 }
 
 ?>

@@ -22,14 +22,10 @@ if (isset($_SESSION['error'])) {
 <a href="signUp.php">Create Account</a>
 
 <?php
-	if(empty($_POST["login"])) {
+	if(isset($_SESSION['error'])) {
 ?>
-	<p style="color: red;">Login is incorrect</p>
+	<p style="color: red;"><?php echo S_SESSION['error']; ?></p>
 <?php
-	}
-	if(empty($_POST["password"])) {
-?>
-	<p style="color: red;">Password is incorrect</p>
-<?php
-	}
+	unset($_SESSION['error']);
+}
 ?>
