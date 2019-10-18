@@ -19,6 +19,9 @@ try {
      throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }
 #-----------------------------------------------------------
+$password = $_POST['password'];
+$confirm_password = $_POST['password_confirm'];
+
 $email = $_POST['email'];
 $res = $pdo->query("Select * from User where email = '$email'")->fetchAll();
 if (count($res) != 0)
@@ -27,6 +30,12 @@ if (count($res) != 0)
     header('Location: /signUp.php');
     exit();
 }
+elseif($confirm_password !== $password)
+{
+	$_SESSION['error']='confirmation password is different from password';
+	header('Location: /signUp.php');
+	exit();
+}		
 else {
 	#Data recovery
 	$login = $_POST['login'];
