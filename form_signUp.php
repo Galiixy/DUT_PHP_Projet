@@ -19,23 +19,23 @@ try {
      throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }
 #-----------------------------------------------------------
-$email = $GET['email'];
-$res = $pdo->query("Select * from User where email = '$email'");
-if ($res <> null)
+$email = $_POST['email'];
+$res = $pdo->query("Select * from User where email = '$email'")->fetchAll();
+if (count($res) != 0)
 {
-    $_SESSION['error']='user already exist !';
-    header('Location : index.php');
+    $_SESSION['error']='user already exist !!!!';
+    header('Location: /signUp.php');
     exit();
 }
 else {
 	#Data recovery
-	$login = $GET['login'];
-	$password=$GET['password'];
-	$last_name=$GET['last_name'];
-	$first_name=$GET['first_name'];
+	$login = $_POST['login'];
+	$password=$_POST['password'];
+	$last_name=$_POST['last_name'];
+	$first_name=$_POST['first_name'];
 	#insertion
-	$pdo->query("insert into User (login,password,last_name,first_name,email) values ('$login','$password','$last_name','$first_name','$email'));
-	header('Location : fridge.php');
+	$pdo->query("insert into User (login,password,last_name,first_name,email) values ('$login','$password','$last_name','$first_name','$email')");
+	header('Location: /fridge.php');
 	exit();
 }
 ?>
