@@ -12,7 +12,7 @@ $options = [
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
     PDO::ATTR_EMULATE_PREPARES   => false,
 ];
-$cost=5;
+
 
 #Log to DATABASE
 try {
@@ -23,7 +23,7 @@ try {
 #-----------------------------------------------------------
 $password = $_POST['password'];
 $confirm_password = $_POST['password_confirm'];
-
+$cost=5;
 $email = $_POST['email'];
 $res = $pdo->query("Select * from User where email = '$email'")->fetchAll();
 if (count($res) != 0)
