@@ -28,4 +28,5 @@ if (isset($_SESSION['error'])) {
 <?php
 	unset($_SESSION['error']);
 }
+include ['footer.php'];
 ?>
