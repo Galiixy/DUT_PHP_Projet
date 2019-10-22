@@ -28,7 +28,7 @@ AND u.Id_User=food.Id_User
 AND food.Id_Food=f.Id_Food");
 ?>
 
-<?php include ['maquette/header.php'];?>
+<?php include ['header.php'];?>
 
 <table align="center" border="1px" style ="width:300px; line-height:30px;">
     <tr>
@@ -63,4 +63,4 @@ else{ ?>
 
 
 </table>
-<?php include ['maquette/footer.php']?>
+<?php include ['footer.php']?>
