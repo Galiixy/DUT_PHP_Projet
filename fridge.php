@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-#include['maquette/baseConnection.php'];
-$host ='localhost';
+include('./baseConnection.php');
+/*$host ='localhost';
 $db ='galiixy';
 $user='galiixy';
 $pass='Jobslpxi';
@@ -19,7 +19,7 @@ try {
 } catch(\PDOException $e){
 	throw new \PDOException($e->getMessage(),(int)$e->getCode());
 }
-
+*/
 
 
 $res =$pdo->query("Select f.name as Name,food.quantity as Quantity, f.nutriction_fact as Nutriction from Food_Definition f,Food food,User u
