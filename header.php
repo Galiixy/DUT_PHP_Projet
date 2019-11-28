@@ -18,3 +18,5 @@
             <li><a href="signOut.php">Sign out</a></li>
         </ul> 
 	</nav>
+</body>
+</html>
